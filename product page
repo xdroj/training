@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheets" href="styles.css">
+  <title>Product Landing Page</title>
+
+  <!--Coded by XDr
+  Technoob-->
+
+</head>
+
+<header id="header">
+  
+<img id="header-img" src="https://static.vecteezy.com/system/resources/thumbnails/008/976/210/small/clothing-store-logo-design-with-hanger-illustration-vector.jpg"></img>
+
+<nav id="nav-bar">
+  <ul>
+    <li><a class="nav-link" href="#shop">Shop Now</a></li>
+    <li><a class="nav-link" href="#sale">On Sale</a></li>
+    <li><a class="nav-link" href="#gallery">Gallery</a></li>
+  </ul>
+</nav>
+
+</header>
+
+
+<body>
+  <div id="shop">
+    <div class="box1">
+      <h2>Limited offer!</h2> 
+    </div> 
+    
+    <div>  
+
+    <iframe class="box2" id="video" width="560" height="315" src="https://www.youtube.com/embed/EzaGEx80dJQ?si=OSntvlxRBLHsEuob?autoplay=1&mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+
+  </div>
+ </div>
+
+  <div id="sale">
+    <h1>On sale<h1>
+    
+  </div>
+
+  <div id="gallery">
+    
+    <h1>Gallery</h1>
+    
+  </div>
+
+  <div id="contact">
+
+    <form id="form" action="https://www.freecodecamp.com/email-submit">
+      <!--add additional inputs-->
+      <input id="email" placeholder="abc123@gmail.com" type="email" name="email"></input>
+      <input id="submit" type="submit"></input>
+          
+  </div>
+
+      
+
+    </form>
+  
+
+
+</body>
+
+<footer>
+  <ul>
+    <li>Privacy</li>
+    <li>Terms</li>
+    <li>Support</li>
+  </ul>
+  <p>Copyright 2025, Original XD Designs</p>
+</footer>
+
+  </html>
