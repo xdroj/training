@@ -1,15 +1,126 @@
 *{
-    background-color: black;
-    color: white
-}
-
-li{
+    color: white;
+  }
+  body{
+   background: linear-gradient( 
+   black 10%,
+   #b77f3a,
+   black 10%)
+  }
+  
+  header{
+    background-color: linen;
+    display: flex;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+  }
+  #header-img{
+    width: auto;
+    height: auto;
+    position: inherit;
+    margin-left: 5vw;
+    margin-right: auto;
+    border-radius: 30px;
+  }
+  nav{
+    position: sticky;
+  }
+  
+  #nav-bar ul{
+    border: 2px solid red;
+    width: 40vw;
+    height: 100%;
+    margin-top: 0;
+    margin-right: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-flow: row;
+    align-items: center;
+    font-size: 25px;
+  }
+  /*test*/
+  .nav-link {
+    color: brown;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 0 5px;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(139, 105, 28, 0.8);
+    border-radius: 100%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .nav-link:hover::before {
+    width: 200px;
+    height: 200px;
+    animation: ripple 1s ease-out infinite;
+    opacity: 1;
+  }
+  
+  @keyframes ripple {
+    0% {
+      width: 0;
+      height: 0;
+      opacity: 1;
+    }
+    100% {
+      width: 200px;
+      height: 200px;
+      opacity: 0;
+    }
+  }
+  /*test end*/
+  li{
     list-style: none;
-}
-
-.header{
-    display:;
-    justify-content:;
-    color: #b77f3a
-
-}
+    display: inline-flex;
+  }
+  
+  #shop{
+    border: 1px dotted orange;
+    display: flexbox;
+  
+    flex-wrap: nowrap;
+  }
+  
+  #sale{
+    border: 1px solid green;
+  }
+  
+  #gallery{
+    border: 1px solid red;
+  
+  }
+  
+  iframe{
+    width: 49vw;
+    height: 40vw;
+    border-radius: 8px;
+   
+  }
+  
+  #contact{
+    border: 1px solid blue;
+  }
+  
+  footer{
+    border: 1px solid green;
+    display: flex;
+    justify-content: flex-end;
+  }
