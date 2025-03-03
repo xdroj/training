@@ -1,9 +1,11 @@
 *{
-  color: #777777;
+  color: linen;
 }
+
 html{
   scroll-behavior: smooth;
 }
+
 body{
   margin: 0;
  }
@@ -18,6 +20,8 @@ header{
   justify-content: space-evenly;
   top: 0;
   position: sticky;
+  z-index: 1;
+
 }
 #header-img{
   height: auto;
@@ -89,6 +93,8 @@ header{
 li{
   list-style: none;
 }
+
+
 
 #home{
   background-image: url("https://img.freepik.com/free-photo/elegant-white-abstract-background_24972-1974.jpg");
@@ -186,7 +192,8 @@ li{
 }
 
 .ctaimage{
- height: 2rem; 
+  isolation: isolate;
+  height: 2rem; 
 }
 
 
@@ -196,28 +203,90 @@ iframe{
   border-radius: 10px; 
 }
 
+#homebglogo{
+
+  opacity: 0.3;
+}
+
 
 #testimonials{
   border: 1px solid green;
   min-height: 700px;
-  margin: 10px;
+  margin: 0x;
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+}
+#bgvideo{
+  position: fixed;
+  min-width: 90%;
+  min-height: 90%;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  
+}
+#reviews{
+  border: 1px solid black;
+  padding-top: 80px;
   display: flex;
-  justify-content: center;  
+  justify-content: center;
+}
+
+#testibox{
+  width: 100vw;
+  height: 700px;
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
- 
+
+}
+
+#testibox1{
+  border: 1px solid violet;
+  width: 20vw;
+  min-height: 50vh;
+  display: block;
+  
+
+
+}
+#tbhs1{
+  width: 30%
+}
+
+#testibox2{
+  border: 1px solid blue;
+  width: 20vw;
+
+}
+
+#testibox3{
+  border: 1px solid green;
+  width: 20vw;
+
 }
 
 #locations{
-  border: 1px solid red;
-  min-height: 700px;
-  margin: 10px;
+  min-height: 800px;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  
-
+  background-image: url(https://images.pexels.com/photos/8311890/pexels-photo-8311890.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-size: cover;
+  /*
+  clip-path: inset(0 0 0 0);
+  */
 }
-
+#bgloc{
+  position: fixed;
+  min-width: 100%;
+  min-height: 100%;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
 
 #newsletter{
   border: 1px solid blue;
