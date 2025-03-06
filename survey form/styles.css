@@ -1,0 +1,27 @@
+body{
+   background-image: url(https://static.vecteezy.com/system/resources/thumbnails/020/069/751/small_2x/business-performance-monitoring-concept-businessman-using-smartphone-online-survey-filling-out-digital-form-checklist-blue-background-photo.jpg);
+   color: white;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+  }
+
+header{
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.container{
+
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+
+}
+form{
+    
+    background-color: rgba(8, 8, 87,0.5);
+    
+    border: 5px solid white;
+}

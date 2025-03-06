@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport", content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+
+  </head>
+
+<!--XDr technoob-->
+
+  <body>
+    
+    <div class="container">
+        
+        <header class="header">
+            <h1 id="title">Survey Form</h1>
+            <p id="description">This is a survey to better understand you as our most valuable clients. Please answer each question precisely and truthfully.</p>
+        </header>
+
+    <form id="survey-form">
+
+    <div class="form-group">
+      <label id="name-label">Name</label>
+      <input id="name" type="text" placeholder="Enter your Name" required/>
+      </div>
+
+    <div>
+      <label id="email-label">Email</label>
+      <input id="email" type="email" placeholder="email" required/>
+      </div>
+    
+    <div>
+      <label id="number-label">Number</label>
+    <input id="number" type="number" placeholder="Cue Number" min="1" max="99">
+      </div>
+
+    <div>
+      What is your current position?
+      <select id="dropdown">
+        <option>Intern</option>
+        <option>Regular</option>
+      </select>
+      </div>
+
+    <div>
+      Would you say that you're in the right place?
+        <div>
+        <input type="radio" name="yes" value="yes">Yes
+        </div>
+          <div>
+            <input type="radio" name="yes" value="yes">Yes<input type="radio" name="yes" value="yes">Yes
+            </div>
+      </div>
+    <div>
+        <div>
+          <input type="radio" name="no" value="no">No
+          </div>
+            <div>
+            <input type="radio" name="no" value="no">No
+            <input type="radio" name="no" value="no">No
+            </div>
+
+      </div>
+
+    <div>
+      <input type="checkbox" value="Agree">
+      <input type="checkbox" value="Agree">
+      </div>
+    
+    <div>
+      <label>Any suggestions?
+        <textarea name="suggestions" rows="3" cols="30">!</textarea>
+      </label>
+      </div>
+    
+    <div>
+      <button id="submit" type="submit">Submit</botton>
+    
+    </form>
+</div>
+
+
+  </body>
+  </html>
