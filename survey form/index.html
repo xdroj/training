@@ -17,7 +17,7 @@
         
         <header class="header">
             <h1 id="title">Survey Form</h1>
-            <p id="description">This is a survey to better understand you as our most valuable clients. Please answer each question precisely and truthfully.</p>
+            <p id="description">This is a survey to better understand you as our most valuable team members.</p>
         </header>
 
     <form id="survey-form">
@@ -27,56 +27,75 @@
       <input id="name" type="text" placeholder="Enter your Name" required/>
       </div>
 
-    <div>
-      <label id="email-label">Email</label>
-      <input id="email" type="email" placeholder="email" required/>
+    <div class="form-group">
+      <label id="email-label">E-mail</label>
+      <input id="email" type="email" placeholder="Enter your Email" required/>
       </div>
     
-    <div>
-      <label id="number-label">Number</label>
-    <input id="number" type="number" placeholder="Cue Number" min="1" max="99">
+    <div class="form-group">
+      <label id="number-label">Age</label>
+    <input id="number" type="number" placeholder="Age" min="18" max="99">
       </div>
 
-    <div>
-      What is your current position?
+    <div class="form-group">
+      <legend>What is your current position?</legend>
       <select id="dropdown">
-        <option>Intern</option>
-        <option>Regular</option>
+        <option value="">(select one)</option>
+        <option value="intern">Intern</option>
+        <option value="regular">Regular</option>
+        <option value="admin">Admin</option>
       </select>
       </div>
-
-    <div>
-      Would you say that you're in the right place?
+<fieldset>
+    <div class="form-group">
+      <legend>Would you say that you're in the right company?</legend>
         <div>
-        <input type="radio" name="yes" value="yes">Yes
+          <input class="inline" type="radio" name="yes" value="yes">Yes
         </div>
-          <div>
-            <input type="radio" name="yes" value="yes">Yes<input type="radio" name="yes" value="yes">Yes
-            </div>
-      </div>
-    <div>
+
         <div>
-          <input type="radio" name="no" value="no">No
-          </div>
-            <div>
-            <input type="radio" name="no" value="no">No
-            <input type="radio" name="no" value="no">No
-            </div>
-
+          <input class="inline" type="radio" name="yes" value="yes">Maybe
+        </div>  
+        <div>
+          <input class="inline" type="radio" name="yes" value="yes">No
+       </div>
       </div>
+</fieldset>
 
-    <div>
-      <input type="checkbox" value="Agree">
-      <input type="checkbox" value="Agree">
-      </div>
-    
-    <div>
-      <label>Any suggestions?
-        <textarea name="suggestions" rows="3" cols="30">!</textarea>
+<fieldset>
+    <div class="form-group">
+      <legend>What do you like to see improved?(Check all that apply)</legend>
+
+      
+       <label> <input class="checkbox inline" type="checkbox" value="Better-coffee-in-the-pantry">Better coffee in the pantry.
       </label>
-      </div>
+        
+
+       <label>
+        <input class="checkbox inline" type="checkbox" value="Updated-service-laptop/hardware">Updated service laptop/hardware.
+      </label>
+       
+
+      <label>
+        <input class="checkbox inline" type="checkbox" value="More-skills-development-trainings">More skills development trainings.</label>
+        
+
+      <label>
+        <input class="checkbox inline" type="checkbox" value="Dental">Dental.</label>
+        
+
+      <label>
+        <input class="checkbox inline" type="checkbox" value="Security-cloud-service">Security cloud service.</label>
+
+      <label><input class="checkbox inline" type="checkbox" value="others">Others
+      </label><div><textarea class="input-textarea" name="suggestions" rows="3" cols="30" placeholder="please indicate"></textarea></div>
+        
+
+    </div>
+</fieldset>     
+
     
-    <div>
+    <div class="form-group">
       <button id="submit" type="submit">Submit</botton>
     
     </form>
