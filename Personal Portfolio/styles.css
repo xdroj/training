@@ -1,10 +1,24 @@
 html{
   scroll-behavior: smooth;
 }
+/*
+.tektur-<uniquifier> {
+  font-variation-settings:
+    "width" 100;
+}
+
+
+.sora-<uniquifier> {
+  
+}*/
 
 body{
   margin: 0;
   background: linear-gradient(to right,#282424, #61615d);
+  font-family: "Sora", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
 
 }
 
@@ -16,6 +30,7 @@ nav#navbar.nav{
   height: 60px;
   margin: 0;
   z-index: 10;
+  border-bottom: 1px solid white;
 }
 
 ul.nav-list{
@@ -28,7 +43,7 @@ ul.nav-list{
   list-style-type: none;
   word-spacing: 30px;
   text-decoration: none;
-  color: #b5b993;;
+  color: #b5b993;
   padding: 20px;
   text-align: center;
   font-size: 20px
@@ -43,19 +58,42 @@ a{
   background-color: #282424;
    
 }
-
-a:hover{
+#welcome-section{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 h1#profile{
   color: antiquewhite;
-  font-size: 80px;
+  text-shadow: 1px 1px black;
+  font-size: 150px;
   font-style: impact, sans-serif;
+  margin-top: 60px;
+  margin-bottom: 0;
+  padding: 0px;
+}
+#xdr{
+  position: absolute;
+  left: 10px;
+  color: rgba(85, 95, 71, 0.1);
+  font-size: 650px;
+  z-index: -1;
+  top: 45px;
+  text-shadow: 2px 2px 4px;
+  transform: rotatez(20deg);
+  
+  font-family: "Tektur", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
 }
 
 h3#profile{
+  border: 1px solid white;
   font-weight: 1;
   font-size: 40px;
+  color: #8cf100;
 }
 
 h3 span{
@@ -83,4 +121,39 @@ h1,h3{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/*project section*/
+.background{
+  background-image: url(https://mir-s3-cdn-cf.behance.net/projects/404/5edadd178582717.Y3JvcCwxMDgyLDg0NiwwLDI1MQ.jpg);
+}
+/*
+  filter: blur(1px);
+  z-index: -999;
+}*/
+#projects{
+  border-top: 2px solid white;
+  width: 100vw;
+  height: 98vh;
+  color: antiquewhite;
+}
+
+#project-header{
+  border: 1px dotted orange;
+  text-align: center;
+  font-size:40px;
+  z-index: 1;
+}
+
+div.projects-grid{
+  border: 1px solid purple;
+  display: inline-grid;
+}
+
+/*contact section*/
+
+#contact{
+  border: 1px solid red;
+  width: 100vw;
+  height: 100vh;
 }
