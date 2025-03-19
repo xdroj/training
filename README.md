@@ -16,6 +16,8 @@ Here are some of my repos which are part of my trainings:
 
 
 ###Connect With Me  
-- GitHub: [xdroj](https://github.com/xdroj)  
+- GitHub: [xdroj](https://github.com/xdroj)
+- codepen [xdroj](https://codepen.io/xdroj)
+- instagram [XD R](https://www.instagram.com/10_4roj.45/)
 
 **Stay tuned for more projects as I grow!**  
