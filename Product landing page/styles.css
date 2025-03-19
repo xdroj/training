@@ -8,7 +8,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #1B1B2F; /* Dark Navy */
+  background-color: #1B1B2F;
   color: #cdaa1f;
   margin: 0;
   padding: 0;
@@ -33,7 +33,7 @@ header {
 
 
 .logo-container {
-  flex-shrink: 0; /* Prevents it from shrinking */
+  flex-shrink: 0; 
 }
 
 #header-img {
@@ -65,7 +65,7 @@ header {
 }
 
 .nav-link:hover {
-  color: #EAB543; /* Gold */
+  color: #EAB543;
 }
 
 
@@ -82,13 +82,13 @@ header {
   gap: 50px;
 }
 
-/* Center Text in Hero Section */
+
 .hero-content {
   max-width: 500px;
 }
 
 .hero-content h1 {
-  font-size: 4rem; /* Increased from default */
+  font-size: 4rem;
   font-weight: 700;
   letter-spacing: 2px;
 }
@@ -112,7 +112,7 @@ header {
   font-style: italic;
 }
 
-/* CTA Button */
+/*======= CTA Button */
 #cta {
   background-color: #E43F5A; 
   color: white;
@@ -261,7 +261,7 @@ h1#reviews, div.testimonials{
   padding-top: 200px;
 }
 
-/* Dark Overlay for Readability */
+
 #locations::before {
   content: "";
   position: absolute;
@@ -457,7 +457,7 @@ footer ul li a:hover {
 /* 📌 Optimize Layout for Small Mobile Screens (min-width: 420px) */
 @media (min-width: 420px) and (max-width: 768px) {
   
-  /* 🛒 Hero Section - Adjust Font Sizes */
+  /* Hero Section - Adjust Font Sizes */
   .hero-content h1 {
     font-size: 2.5rem;
   }
