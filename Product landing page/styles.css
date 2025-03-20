@@ -1,4 +1,4 @@
-/* =============== Import Fonts */
+/* =============== Imported Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
 
 /* ============== Global Styles */
@@ -8,7 +8,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #1B1B2F;
+  background-color: #1B1B2F; 
   color: #cdaa1f;
   margin: 0;
   padding: 0;
@@ -33,7 +33,7 @@ header {
 
 
 .logo-container {
-  flex-shrink: 0; 
+  flex-shrink: 0; /* Prevents it from shrinking */
 }
 
 #header-img {
@@ -65,7 +65,7 @@ header {
 }
 
 .nav-link:hover {
-  color: #EAB543;
+  color: #EAB543; 
 }
 
 
@@ -82,13 +82,12 @@ header {
   gap: 50px;
 }
 
-
 .hero-content {
   max-width: 500px;
 }
 
 .hero-content h1 {
-  font-size: 4rem;
+  font-size: 4rem; 
   font-weight: 700;
   letter-spacing: 2px;
 }
@@ -112,7 +111,6 @@ header {
   font-style: italic;
 }
 
-/*======= CTA Button */
 #cta {
   background-color: #E43F5A; 
   color: white;
@@ -163,7 +161,6 @@ header {
   text-align: center;
 }
 
-/* Background Video */
 #bgvideo {
   position: absolute;
   top: 0;
@@ -175,7 +172,6 @@ header {
   opacity: 0.8; 
 }
 
-/* Testimonials Layout */
 .testimonials {
   display: flex;
   justify-content: center;
@@ -189,7 +185,6 @@ h1#reviews, div.testimonials{
   margin-top: 50px;
 }
 
-/* Testimonial Cards */
 .profile {
   background: rgba(255, 255, 255, 0.4);
   border-radius: 12px;
@@ -261,7 +256,6 @@ h1#reviews, div.testimonials{
   padding-top: 200px;
 }
 
-
 #locations::before {
   content: "";
   position: absolute;
@@ -287,7 +281,6 @@ h1#reviews, div.testimonials{
   margin-top: 20px;
 }
 
-/* Individual Location Cards */
 .location {
   background: rgba(255, 255, 255, 0.2); 
   padding: 25px;
@@ -298,13 +291,11 @@ h1#reviews, div.testimonials{
   backdrop-filter: blur(5px); /* Glassmorphism effect */
 }
 
-/* Hover Effect */
 .location:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Location Icons */
 .location i {
   font-size: 2rem;
   color: #EAB543; 
@@ -377,7 +368,8 @@ footer ul li a:hover {
   text-decoration: underline;
 }
 
-/* ========================== 🌎 Global Responsive Fixes ========================== */
+/* ========================== media queries */
+
 @media (max-width: 1024px) {
   
   #nav-bar {
@@ -388,7 +380,7 @@ footer ul li a:hover {
   }
 }
 
-/* Hero Section - Adjust Font Sizes & Spacing (tablets) */
+/* tablets */
 @media (max-width: 768px) {
   #home {
     flex-direction: column;
@@ -408,10 +400,7 @@ footer ul li a:hover {
   .ctaimage {
     width: 120px; 
   }
-}
 
-/* 📌 Testimonials - Stack Cards for tablets */
-@media (max-width: 768px) {
   .testimonials {
     flex-direction: column;
     align-items: center;
@@ -421,9 +410,7 @@ footer ul li a:hover {
   .profile {
     width: 90%; 
   }
-}
 
-@media (max-width: 768px) {
   .locations-grid {
     flex-direction: column;
     align-items: center;
@@ -433,9 +420,7 @@ footer ul li a:hover {
     width: 90%; 
     padding: 20px;
   }
-}
 
-@media (max-width: 768px) {
   form {
     flex-direction: column;
     align-items: center;
@@ -447,19 +432,15 @@ footer ul li a:hover {
   }
 }
 
-@media (max-width: 600px) {
-  footer ul {
-    flex-direction: column;
-    gap: 10px;
-  }
-}
-
-/* 📌 Optimize Layout for Small Mobile Screens (min-width: 420px) */
-@media (min-width: 420px) and (max-width: 768px) {
+/*mobile phones*/
+@media (min-width: 480px) and (max-width: 599px) {
   
-  /* Hero Section - Adjust Font Sizes */
+   #home {
+    padding-top: 50px; 
+  }
+
   .hero-content h1 {
-    font-size: 2.5rem;
+    font-size: 2.4rem;
   }
 
   .hero-content p {
@@ -468,38 +449,106 @@ footer ul li a:hover {
   }
 
   .ctaimage {
-    width: 110px; 
+    width: 110px;
+  }
+  .hero-media iframe {
+    width: 100%;
+    max-width: 90vw; 
+    height: auto;
+    aspect-ratio: 16 / 9; 
+    border-radius: 10px; 
+  }
+
+  #testimonials {
+    height: auto;
+    min-height: 120vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
   }
 
   .testimonials {
     flex-direction: column;
-    gap: 20px; 
+    align-items: center;
+    gap: 15px; 
   }
 
   .profile {
-    width: 85%; 
+    width: 80%;
+    max-width: 260px;
+    padding: 10px;
   }
 
-  
+  .profile img {
+    width: 55px;
+    height: 55px;
+  }
+
+  .profile blockquote {
+    font-size: 0.9rem;
+    padding: 5px;
+  }
+
+  .profile h2 {
+    font-size: 1.1rem;
+  }
+
+  .profile h4 {
+    font-size: 0.85rem;
+  }
+
+  #locations {
+    height: auto;
+    min-height: 110vh; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+  }
+
   .locations-grid {
     flex-direction: column;
+    align-items: center;
     gap: 15px;
   }
 
   .location {
-    width: 85%; 
-    padding: 15px;
+    width: 85%;
+    max-width: 270px;
+    padding: 12px;
   }
 
- 
+  .location i {
+    font-size: 1.8rem;
+  }
+
+  .location h2 {
+    font-size: 1.3rem;
+  }
+
+  .location p {
+    font-size: 1rem;
+  }
+
   #email {
     width: 85%;
     max-width: 280px;
   }
 
+  footer {
+    padding: 10px 10px;
+  }
 
   footer ul {
     flex-direction: column;
-    gap: 8px;
+    gap: 5px; 
+  }
+
+  footer p {
+    font-size: 0.9rem; 
   }
 }
+
