@@ -1,117 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Personal Portfolio Webpage</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Tektur:wght@400..900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&family=Tektur:wght@400..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+document.addEventListener("DOMContentLoaded", function () {
+    // 📌 Select Menu Elements
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navList = document.querySelector(".nav-list");
 
-</head>
+    if (menuToggle && navList) {
+        // ✅ Toggle Menu When Clicking Button
+        menuToggle.addEventListener("click", function () {
+            navList.classList.toggle("active");
+        });
 
-<!--coded by Technoob&gpt-->
+        // ✅ Close Menu When Clicking Outside
+        document.addEventListener("click", function (event) {
+            if (!menuToggle.contains(event.target) && !navList.contains(event.target)) {
+                navList.classList.remove("active");
+            }
+        });
+    }
 
-<body>
-  
-  <!-- Navbar -->
-  <nav id="navbar" class="nav">
-    <ul class="nav-list">
-      <li><a href="#welcome-section">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
+    // 📌 Project Tiles Scroll Animation
+    const tiles = document.querySelectorAll(".project-tile");
 
-  <!-- Welcome Section -->
-  <section id="welcome-section">
-    <h1 id="profile-title">I'm John</h1><span id="xdr">XDr</span>
-    <h3 id="profile">An aspiring <span>Web Dev</span>eloper</h3>
-  </section>
+    function revealProjects() {
+        tiles.forEach(tile => {
+            if (tile.getBoundingClientRect().top < window.innerHeight - 100) {
+                tile.classList.add("show");
+            }
+        });
+    }
 
-<!-- Projects Section -->
-<section id="projects" class="project">
-  <h1 id="project-header">Here are some of my Projects</h1>
+    // Debounce function to improve performance
+    function debounce(func, delay) {
+        let timeout;
+        return function () {
+            clearTimeout(timeout);
+            timeout = setTimeout(func, delay);
+        };
+    }
 
-  <div class="projects-grid">
-    <div class="project-tile">
-      <a href="https://codepen.io/xdroj/pen/KwKZvjr" target="_blank">
-        <img src="https://codepen.io/xdroj/pen/KwKZvjr/image/large.png" alt="Survey Form">
-      </a>
-      <div class="project-info">
-        <p>Building a Survey Form</p>
-        <span class="project-desc">A simple yet effective survey form built with HTML & CSS.</span>
-      </div>
-    </div>
+    // Optimize scrolling performance
+    const optimizedRevealProjects = debounce(revealProjects, 100);
+    window.addEventListener("scroll", optimizedRevealProjects);
+    revealProjects(); // Run once on page load
 
-    <div class="project-tile">
-      <a href="https://codepen.io/xdroj/pen/yyLpzBZ" target="_blank">
-        <img src="https://codepen.io/xdroj/pen/yyLpzBZ/image/large.png" alt="Tribute Page">
-      </a>
-      <div class="project-info">
-        <p>Tribute Page</p>
-        <span class="project-desc">A tribute page dedicated to an inspiring figure.</span>
-      </div>
-    </div>
+    // 📌 Contact Form EmailJS Integration
+    if (typeof emailjs !== "undefined") {
+        emailjs.init("your_public_key"); // Initialize EmailJS
 
-    <div class="project-tile">
-      <a href="https://codepen.io/xdroj/pen/YPzYrwV" target="_blank">
-        <img src="https://codepen.io/xdroj/pen/YPzYrwV/image/large.png" alt="Technical Documentation Page">
-      </a>
-      <div class="project-info">
-        <p>Technical Documentation Page</p>
-        <span class="project-desc">A structured guide with useful documentation.</span>
-      </div>
-    </div>
+        const contactForm = document.getElementById("contact-form");
 
-    <div class="project-tile">
-      <a href="https://codepen.io/xdroj/pen/xbxpXVZ" target="_blank">
-        <img src="https://codepen.io/xdroj/pen/xbxpXVZ/image/large.png" alt="Product Landing Page">
-      </a>
-      <div class="project-info">
-        <p>Product Landing Page</p>
-        <span class="project-desc">A sleek product landing page with a call-to-action.</span>
-      </div>
-    </div>
-  </div>
+        if (contactForm) {
+            contactForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent page refresh
 
-  <!-- Show All Button -->
-  <a id="profile-link" href="https://codepen.io/xdroj/pens/showcase" target="_blank" class="button">
-    Show all
-  </a>
-</section>
+                const formData = {
+                    name: this.name.value,
+                    email: this.email.value,
+                    message: this.message.value
+                };
 
-<!-- Contact Section -->
-<section id="contact" class="contact">
-  <h1>Get in Touch</h1>
+                emailjs.send("your_service_id", "your_template_id", formData)
+                    .then(function () {
+                        alert("Message sent successfully!");
+                    }, function (error) {
+                        alert("Failed to send message. Please try again.");
+                        console.log(error);
+                    });
 
-  <div class="contact-container">
-    <!-- Contact Form -->
-    <form id="contact-form">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-
-  
-  <!-- Social Media Links -->
-<div class="social-links">
-  <a href="https://github.com/xdroj" target="_blank"><i class="fab fa-github"></i></a>
-  <a href="https://www.linkedin.com/in/john-rojas-7109852b1/" target="_blank"><i class="fab fa-linkedin"></i></a>
-  <a href="https://www.facebook.com/john.rojas.513585/" target="_blank"><i class="fab fa-facebook"></i></a>
-  <a href="https://www.instagram.com/10_4roj.45/" target="_blank"><i class="fab fa-instagram"></i></a>
-  <a href="https://codepen.io/xdroj" target="_blank"><i class="fab fa-codepen"></i></a>
-</div>
-
-</div>
-</section>
-
-  <footer></footer>
-
-  <script src="index.js"></script>
-</body>
-</html>
+                this.reset(); 
+            });
+        }
+    }
+}); 
