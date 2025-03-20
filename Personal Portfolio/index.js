@@ -1,4 +1,23 @@
 document.addEventListener("DOMContentLoaded", function () {
+    // 📌 Select Menu Elements
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navList = document.querySelector(".nav-list");
+
+    if (menuToggle && navList) {
+        // ✅ Toggle Menu When Clicking Button
+        menuToggle.addEventListener("click", function () {
+            navList.classList.toggle("active");
+        });
+
+        // ✅ Close Menu When Clicking Outside
+        document.addEventListener("click", function (event) {
+            if (!menuToggle.contains(event.target) && !navList.contains(event.target)) {
+                navList.classList.remove("active");
+            }
+        });
+    }
+
+    // 📌 Project Tiles Scroll Animation
     const tiles = document.querySelectorAll(".project-tile");
 
     function revealProjects() {
@@ -20,34 +39,35 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Optimize scrolling performance
     const optimizedRevealProjects = debounce(revealProjects, 100);
-
-    // Listen for scroll events and trigger animation
     window.addEventListener("scroll", optimizedRevealProjects);
-    
-    // Run once on page load to reveal already visible projects
-    revealProjects();
-});
+    revealProjects(); // Run once on page load
 
-document.addEventListener("DOMContentLoaded", function () {
-    emailjs.init("your_public_key"); // Initialize EmailJS
+    // 📌 Contact Form EmailJS Integration
+    if (typeof emailjs !== "undefined") {
+        emailjs.init("your_public_key"); // Initialize EmailJS
 
-    document.getElementById("contact-form").addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent page refresh
+        const contactForm = document.getElementById("contact-form");
 
-        const formData = {
-            name: this.name.value,
-            email: this.email.value,
-            message: this.message.value
-        };
+        if (contactForm) {
+            contactForm.addEventListener("submit", function (event) {
+                event.preventDefault(); // Prevent page refresh
 
-        emailjs.send("your_service_id", "your_template_id", formData)
-            .then(function () {
-                alert("Message sent successfully!");
-            }, function (error) {
-                alert("Failed to send message. Please try again.");
-                console.log(error);
+                const formData = {
+                    name: this.name.value,
+                    email: this.email.value,
+                    message: this.message.value
+                };
+
+                emailjs.send("your_service_id", "your_template_id", formData)
+                    .then(function () {
+                        alert("Message sent successfully!");
+                    }, function (error) {
+                        alert("Failed to send message. Please try again.");
+                        console.log(error);
+                    });
+
+                this.reset(); 
             });
-
-        this.reset(); // Clear form after sending
-    });
-});
+        }
+    }
+}); 
