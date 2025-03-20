@@ -5,6 +5,7 @@
   --text: #F5F5F5;      /* Soft White */
   --secondary: #1E1E1E; /* Dark Grey */
   --highlight: #0084FF; /* Vibrant Blue */
+  --accent2: #EAB543 /* Gold*/
 }
 
 /* ========== GLOBAL STYLES ========== */
@@ -26,39 +27,56 @@ body {
 }
 
 /* ========== NAVBAR ========== */
-nav#navbar {
+#navbar {
   position: fixed;
+  width: 100%;
   top: 0;
   left: 0;
-  width: 100%;
-  background-color: var(--secondary);
-  height: 60px;
+  background: rgba(22, 36, 71, 0.95);
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: 20px;
+  padding: 15px 20px;
   z-index: 1000;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-ul.nav-list {
+.nav-container {
   display: flex;
-  gap: 40px;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+}
+
+.nav-list {
+  display: flex;
+  gap: 20px;
   list-style: none;
 }
 
-.nav-list li a {
-  color: var(--text);
-  font-family: "Sora", sans-serif;
-  font-size: 1.2rem;
+.nav-list a {
   text-decoration: none;
-  padding: 15px;
+  color: var(--text);
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  transition: color 0.3s ease-in-out;
 }
 
-.nav-list li a:hover {
-  background-color: var(--accent);
-  border-radius: 5px;
+.nav-list a:hover {
+  color: var(--accent2);
 }
+
+/* Hamburger Menu Button */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+
 
 /* ========== WELCOME SECTION ========== */
 #welcome-section {
@@ -107,7 +125,7 @@ h3#profile {
 }
 
 #profile span {
-  color: red;
+  color: var(--accent);
 }
 
 
@@ -117,8 +135,9 @@ h3#profile {
   background: linear-gradient(to bottom, #c44900, #9c3500);
   border-top: 2px solid white;
   padding: 50px 0;
-  color: white;
+  color: var(--text);
   text-align: center;
+  font-family: "Sora", sans-serif;
 }
 
 #project-header {
@@ -128,7 +147,6 @@ h3#profile {
   margin-bottom: 30px;
 }
 
-/* Project Grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -138,7 +156,6 @@ h3#profile {
   margin: auto;
 }
 
-/* Project Tiles */
 .project-tile {
   background: var(--secondary);
   border-radius: 10px;
@@ -171,14 +188,11 @@ h3#profile {
   color: #ccc;
 }
 
-/* Hover Effect */
 .project-tile:hover {
   transform: scale(1.05);
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-
-/* "Show All" Button */
 .button {
   display: inline-block;
   margin-top: 30px;
@@ -186,7 +200,7 @@ h3#profile {
   font-size: 1.5rem;
   font-weight: bold;
   background: var(--highlight);
-  color: white;
+  color: var(--text);
   border-radius: 8px;
   text-decoration: none;
   transition: 0.3s;
@@ -197,7 +211,6 @@ h3#profile {
   transform: scale(1.1);
 }
 
-/* ========== CONTACT SECTION ========== */
 /* ========== CONTACT SECTION ========== */
 #contact {
   width: 100%;
@@ -212,12 +225,12 @@ h3#profile {
 }
 
 #contact h1 {
+  font-family: "Sora", sans-serif;
   font-size: 3rem;
   color: var(--highlight);
   margin-bottom: 20px;
 }
 
-/* Contact Form */
 .contact-container {
   max-width: 600px;
   width: 100%;
@@ -250,11 +263,12 @@ textarea {
 }
 
 button {
+  font-family: "Sora", sans-serif;
   padding: 12px;
   font-size: 1.2rem;
   font-weight: bold;
   background: var(--highlight);
-  color: white;
+  color: var(--text);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -265,9 +279,6 @@ button:hover {
   background: #005bb5;
   transform: scale(1.05);
 }
-
-/* Social Links */
-.social
 
 
 /* ========== ANIMATIONS ========== */
@@ -282,7 +293,6 @@ button:hover {
   }
 }
 
-/* Scroll Animation */
 .project-tile {
   opacity: 0;
   transform: translateY(20px);
@@ -295,7 +305,6 @@ button:hover {
 }
 
 
-/* Social Media Icons */
 .social-links {
   margin-top: 20px;
   display: flex;
@@ -306,91 +315,132 @@ button:hover {
 .social-links a {
   text-decoration: none;
   color: var(--highlight);
-  font-size: 2rem; /* Bigger icons */
+  font-size: 2rem;
   transition: color 0.3s ease-in-out, transform 0.3s;
 }
 
 .social-links a:hover {
-  color: white;
-  transform: scale(1.2); /* Slight pop effect */
+  color: var(--text);
+  transform: scale(1.2); 
 }
+
+
 
 /* ========== RESPONSIVE DESIGN ========== */
 
-/* For Tablets (Max Width: 768px) */
+/* ================For Tablets (Max Width: 768px) */
 @media (max-width: 768px) {
-  /* Reduce the size of the name */
-  h1#profile-title {
-    font-size: 7rem;
-  }
 
-  /* Adjust the XDr element */
-  #xdr {
-    font-size: 12rem;
-    right: 2%;
-  }
-
-  /* Stack navbar items closer */
   .nav-list {
     gap: 20px;
   }
 
-  /* Adjust project grid */
+  h1#profile-title {
+    font-size: 7rem;
+  }
+
+  h3#profile{
+    font-size: 2.5rem;
+  }
+
+  #xdr {
+    font-size: 12rem;
+    right: 2%;
+    top: 25%;
+  }
+  h1#project-header{
+    font-size: 2.7rem;
+  }
+
   .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   }
 
-  /* Contact form width */
   .contact-container {
     width: 90%;
   }
 
-  /* Reduce social icon size */
   .social-links a {
     font-size: 1.5rem;
   }
 }
 
-/* For Mobile Phones (Max Width: 480px) */
+
+/* ==============for Mobile Phones (Max Width: 480px) */
+
 @media (max-width: 480px) {
-  /* Make the header text smaller */
-  h1#profile-title {
-    font-size: 5rem;
+
+  nav#navbar{
+    padding: 0 20px;
+  }
+  
+  .menu-toggle {    
+    display: block;
+    padding: 20px 0;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    right: -10px;
+    top: 50%;
+  }
+  
+  .nav-container {
+    position: relative;
   }
 
-  /* Adjust the XDr element */
-  #xdr {
-    font-size: 8rem;
-    right: 5%;
-    top: 5%;
-  }
-
-  /* Center navbar items */
   .nav-list {
+    display: none; 
     flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  /* Make the project grid single-column */
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Contact form full width */
-  .contact-container {
+    position: absolute;
+    top: 60px;
+    left: 0;
     width: 100%;
-    padding: 20px;
+    background: rgba(22, 36, 71, 0.95);
+    text-align: center;
+    padding: 10px 0;
+    transition: all 0.3s ease-in-out;
   }
 
-  /* Reduce button size */
+  .nav-list.active {
+    display: flex;
+  }
+
+  .nav-list li {
+    padding: 10px 0;
+  }
+
+  h1#profile-title {
+    font-size: 4rem; 
+  }
+
+  h3#profile{
+    font-size: 1.3rem;
+  }
+
+  #xdr {
+    font-size: 12rem; 
+    right: 10%;
+    top: 30%;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+  }
+
+  .contact-container {
+    width: 90%; 
+    padding: 15px;
+  }
+
   button {
     font-size: 1rem;
     padding: 10px;
   }
 
-  /* Make social icons smaller */
   .social-links a {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
 }
+
