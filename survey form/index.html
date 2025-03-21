@@ -21,34 +21,37 @@
         </header>
 
     <form id="survey-form">
+      <div id="info-section">
+            <div class="form-group">
+            <label id="name-label">Name</label>
+            <input id="name" type="text" placeholder="Enter your Name" required/>
+            </div>
 
-    <div class="form-group">
-      <label id="name-label">Name</label>
-      <input id="name" type="text" placeholder="Enter your Name" required/>
-      </div>
+          <div class="form-group">
+            <label id="email-label">E-mail</label>
+            <input id="email" type="email" placeholder="Enter your Email" required/>
+            </div>
+          
+          <div class="form-group">
+            <label id="number-label">Age</label>
+          <input id="number" type="number" placeholder="Age" min="18" max="99">
+            </div>
+          </div>
 
-    <div class="form-group">
-      <label id="email-label">E-mail</label>
-      <input id="email" type="email" placeholder="Enter your Email" required/>
-      </div>
-    
-    <div class="form-group">
-      <label id="number-label">Age</label>
-    <input id="number" type="number" placeholder="Age" min="18" max="99">
-      </div>
-
-    <div class="form-group">
-      <legend>What is your current position?</legend>
-      <select id="dropdown">
-        <option value="">(select one)</option>
-        <option value="intern">Intern</option>
-        <option value="regular">Regular</option>
-        <option value="admin">Admin</option>
-      </select>
-      </div>
-<fieldset>
-    <div class="form-group">
-      <legend>Would you say that you're in the right company?</legend>
+          
+          <div class="form-group">
+            <legend>What is your current position?</legend>
+            <select id="dropdown">
+              <option value="">(select one)</option>
+              <option value="intern">Intern</option>
+              <option value="regular">Regular</option>
+              <option value="admin">Admin</option>
+            </select>
+            </div>
+        
+<div class="form-group">
+  <legend>Would you say that you're in the right company?</legend>
+  <fieldset>
         <div>
           <input class="inline" type="radio" name="yes" value="yes">Yes
         </div>
@@ -60,12 +63,12 @@
           <input class="inline" type="radio" name="yes" value="yes">No
        </div>
       </div>
-</fieldset>
+  </fieldset>
 
-<fieldset>
-    <div class="form-group">
-      <legend>What do you like to see improved?(Check all that apply)</legend>
 
+  <div class="form-group">
+    <legend>What do you like to see improved?(Check all that apply)</legend>
+      <fieldset>
       
        <label> <input class="checkbox inline" type="checkbox" value="Better-coffee-in-the-pantry">Better coffee in the pantry.
       </label>
@@ -90,10 +93,8 @@
       <label><input class="checkbox inline" type="checkbox" value="others">Others
       </label><div><textarea class="input-textarea" name="suggestions" rows="3" cols="30" placeholder="please indicate"></textarea></div>
         
-
-    </div>
-</fieldset>     
-
+    </fieldset>     
+  </div>
     
     <div class="form-group">
       <button id="submit" type="submit">Submit</botton>
